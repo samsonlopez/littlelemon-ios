@@ -16,7 +16,7 @@ struct Menu: View {
             List {
                 
             }
-        }
+        }.padding()
     }
 }
 

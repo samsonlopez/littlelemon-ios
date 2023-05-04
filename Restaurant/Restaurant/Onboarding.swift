@@ -17,6 +17,7 @@ struct Onboarding: View {
     let kFirstName = "FirstNameKey"
     let kLastName = "LastNameKey"
     let kEmail = "EmailKey"
+    let kIsLoggedIn = "kIsLoggedIn"
     
     var body: some View {
         NavigationView {
@@ -44,6 +45,11 @@ struct Onboarding: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding(20)
         }
+        .onAppear(){
+            if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                isLoggedIn = true
+            }
+        }
     }
     
     func isValidEmail(_ email: String) -> Bool {
@@ -55,9 +61,11 @@ struct Onboarding: View {
     
     fileprivate func saveRegistrationFields() {
         print("Saving registration fields")
-        UserDefaults.standard.set(firstName, forKey: kFirstName)
-        UserDefaults.standard.set(lastName, forKey: kLastName)
-        UserDefaults.standard.set(email, forKey: kEmail)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(firstName, forKey: kFirstName)
+        userDefaults.set(lastName, forKey: kLastName)
+        userDefaults.set(email, forKey: kEmail)
+        userDefaults.set(isLoggedIn, forKey: kIsLoggedIn)
     }
 }
 
