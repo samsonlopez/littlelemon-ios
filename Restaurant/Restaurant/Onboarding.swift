@@ -12,7 +12,7 @@ struct Onboarding: View {
     @State var lastName = ""
     @State var email = ""
     
-    @State var isLoggedIn = false
+    @State var isLoggedIn = true
     
     let kFirstName = "FirstNameKey"
     let kLastName = "LastNameKey"
