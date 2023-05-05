@@ -25,6 +25,11 @@ struct Onboarding: View {
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200)
+                    .padding(.vertical, 20)
                 HeroView()
                 TextField("First name", text: $firstName)
                 TextField("Last name", text: $lastName)
@@ -41,6 +46,7 @@ struct Onboarding: View {
                 } label: {
                     Text("Register")
                 }
+                Spacer()
                 
             }
             .textFieldStyle(RoundedBorderTextFieldStyle())
