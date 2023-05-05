@@ -21,7 +21,7 @@ struct UserProfile: View {
             Text(lastName)
             Text(email)
             Button(action: {
-                UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                UserDefaults.standard.set(false, forKey: "IsLoggedInKey")
                 self.presentation.wrappedValue.dismiss()
             }, label: {
                 Text("Logout")
