@@ -11,13 +11,7 @@ struct Onboarding: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
-    
     @State var isLoggedIn = false
-    
-    let kFirstName = "FirstNameKey"
-    let kLastName = "LastNameKey"
-    let kEmail = "EmailKey"
-    let kIsLoggedIn = "IsLoggedInKey"
     
     var body: some View {
         NavigationView {
@@ -31,47 +25,22 @@ struct Onboarding: View {
                     .frame(width: 200)
                     .padding(.vertical, 20)
                 HeroView()
-                TextField("First name", text: $firstName)
-                TextField("Last name", text: $lastName)
-                TextField("Email", text: $email).keyboardType(.emailAddress)
-                
-                Button {
-                    if(!firstName.isEmpty &&
-                       !lastName.isEmpty &&
-                       !email.isEmpty) &&
-                        isValidEmail(email) {
-                        saveRegistrationFields()
-                        isLoggedIn = true
-                    }
-                } label: {
-                    Text("Register")
-                }
+                RegistrationFormView(
+                    firstName: $firstName,
+                    lastName: $lastName,
+                    email: $email
+                )
+                .padding(.vertical, 20)
+                .frame(maxWidth: .infinity)
                 Spacer()
                 
             }
-            .textFieldStyle(RoundedBorderTextFieldStyle())
         }
         .onAppear(){
-            if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+            if UserDefaults.standard.bool(forKey: "IsLoggedInKey") {
                 isLoggedIn = true
             }
         }
-    }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
-    fileprivate func saveRegistrationFields() {
-        print("Saving registration fields")
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(firstName, forKey: kFirstName)
-        userDefaults.set(lastName, forKey: kLastName)
-        userDefaults.set(email, forKey: kEmail)
-        userDefaults.set(isLoggedIn, forKey: kIsLoggedIn)
     }
 }
 

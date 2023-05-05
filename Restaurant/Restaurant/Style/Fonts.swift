@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Fonts {
     static var displayFont: Font {
-        return Font.custom("MarkaziText-Regular", size: 42).weight(.medium)
+        return Font.custom("MarkaziText-Regular", size: 48).weight(.medium)
     }
     
     static func subTitleFont() -> Font {
@@ -20,7 +20,11 @@ struct Fonts {
     static func leadText() -> Font {
         return Font.custom("Karla-Regular", size: 16).weight(.medium)
     }
-    
+
+    static func labelText() -> Font {
+        return Font.custom("Karla-Regular", size: 16).weight(.bold)
+    }
+
     static func regularText() -> Font {
         return Font.custom("MarkaziText-Regular", size: 18)
     }
