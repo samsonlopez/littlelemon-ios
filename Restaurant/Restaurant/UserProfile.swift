@@ -11,17 +11,17 @@ struct UserProfile: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
         let userDefaults = UserDefaults.standard
-        let firstName = userDefaults.string(forKey: "kFirstNameKey") ?? ""
-        let lastName = userDefaults.string(forKey: "kLastNameKey") ?? ""
-        let email = userDefaults.string(forKey: "kEmailKey") ?? ""
+        let firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
+        let lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
+        let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             Text("Personal information")
-            Image("profile-image-placeholder")
+            Image("profile_image")
             Text(firstName)
             Text(lastName)
             Text(email)
             Button(action: {
-                UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                UserDefaults.standard.set(false, forKey: "IsLoggedInKey")
                 self.presentation.wrappedValue.dismiss()
             }, label: {
                 Text("Logout")

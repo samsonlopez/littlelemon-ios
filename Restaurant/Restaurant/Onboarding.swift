@@ -17,7 +17,7 @@ struct Onboarding: View {
     let kFirstName = "FirstNameKey"
     let kLastName = "LastNameKey"
     let kEmail = "EmailKey"
-    let kIsLoggedIn = "kIsLoggedIn"
+    let kIsLoggedIn = "IsLoggedInKey"
     
     var body: some View {
         NavigationView {
