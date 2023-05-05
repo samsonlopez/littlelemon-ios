@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880CB0812A042C3F00CE4DB5 /* Dish+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */; };
 		88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472B2A02D1B300849D05 /* Onboarding.swift */; };
 		88CC47302A03985400849D05 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* Home.swift */; };
 		88CC47322A03988B00849D05 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* Menu.swift */; };
+		88CC47342A03A2FD00849D05 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47332A03A2FD00849D05 /* UserProfile.swift */; };
+		88CC47372A03B99300849D05 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47352A03B99300849D05 /* FetchedObjects.swift */; };
+		88CC47382A03B99300849D05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47362A03B99300849D05 /* Persistence.swift */; };
+		88CC473A2A03BCF800849D05 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47392A03BCF800849D05 /* MenuList.swift */; };
+		88CC473C2A03BD1800849D05 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC473B2A03BD1800849D05 /* MenuItem.swift */; };
+		88CC473F2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88CC473D2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld */; };
 		88FC8C0C2A0251E500841CA0 /* RestaurantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC8C0B2A0251E500841CA0 /* RestaurantApp.swift */; };
 		88FC8C102A0251E500841CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FC8C0F2A0251E500841CA0 /* Assets.xcassets */; };
 		88FC8C132A0251E600841CA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FC8C122A0251E600841CA0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dish+Extension.swift"; sourceTree = "<group>"; };
 		88CC472B2A02D1B300849D05 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		88CC472F2A03985400849D05 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		88CC47312A03988B00849D05 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		88CC47332A03A2FD00849D05 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		88CC47352A03B99300849D05 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		88CC47362A03B99300849D05 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		88CC47392A03BCF800849D05 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		88CC473B2A03BD1800849D05 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		88CC473E2A03F5A500849D05 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		88FC8C082A0251E500841CA0 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FC8C0B2A0251E500841CA0 /* RestaurantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantApp.swift; sourceTree = "<group>"; };
 		88FC8C0F2A0251E500841CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,8 +71,15 @@
 			children = (
 				88FC8C0B2A0251E500841CA0 /* RestaurantApp.swift */,
 				88CC472B2A02D1B300849D05 /* Onboarding.swift */,
+				88CC47332A03A2FD00849D05 /* UserProfile.swift */,
 				88CC472F2A03985400849D05 /* Home.swift */,
 				88CC47312A03988B00849D05 /* Menu.swift */,
+				88CC47352A03B99300849D05 /* FetchedObjects.swift */,
+				88CC47362A03B99300849D05 /* Persistence.swift */,
+				88CC473D2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld */,
+				88CC47392A03BCF800849D05 /* MenuList.swift */,
+				88CC473B2A03BD1800849D05 /* MenuItem.swift */,
+				880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */,
 				88FC8C0F2A0251E500841CA0 /* Assets.xcassets */,
 				88FC8C112A0251E600841CA0 /* Preview Content */,
 			);
@@ -145,6 +166,13 @@
 			files = (
 				88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */,
 				88CC47302A03985400849D05 /* Home.swift in Sources */,
+				88CC473A2A03BCF800849D05 /* MenuList.swift in Sources */,
+				88CC47372A03B99300849D05 /* FetchedObjects.swift in Sources */,
+				880CB0812A042C3F00CE4DB5 /* Dish+Extension.swift in Sources */,
+				88CC47382A03B99300849D05 /* Persistence.swift in Sources */,
+				88CC473F2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld in Sources */,
+				88CC47342A03A2FD00849D05 /* UserProfile.swift in Sources */,
+				88CC473C2A03BD1800849D05 /* MenuItem.swift in Sources */,
 				88CC47322A03988B00849D05 /* Menu.swift in Sources */,
 				88FC8C0C2A0251E500841CA0 /* RestaurantApp.swift in Sources */,
 			);
@@ -347,6 +375,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88CC473D2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88CC473E2A03F5A500849D05 /* ExampleDatabase.xcdatamodel */,
+			);
+			currentVersion = 88CC473E2A03F5A500849D05 /* ExampleDatabase.xcdatamodel */;
+			path = ExampleDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 88FC8C002A0251E500841CA0 /* Project object */;
 }
