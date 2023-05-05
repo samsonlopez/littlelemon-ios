@@ -16,7 +16,7 @@ struct UserProfile: View {
         let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             Text("Personal information")
-            Image("profile_image")
+            Image("profile-image-placeholder")
             Text(firstName)
             Text(lastName)
             Text(email)

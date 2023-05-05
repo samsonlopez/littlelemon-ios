@@ -25,6 +25,7 @@ struct Onboarding: View {
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
+                HeroView()
                 TextField("First name", text: $firstName)
                 TextField("Last name", text: $lastName)
                 TextField("Email", text: $email).keyboardType(.emailAddress)
@@ -43,7 +44,6 @@ struct Onboarding: View {
                 
             }
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(20)
         }
         .onAppear(){
             if UserDefaults.standard.bool(forKey: kIsLoggedIn) {

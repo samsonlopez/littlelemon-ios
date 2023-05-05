@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		880CB0812A042C3F00CE4DB5 /* Dish+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */; };
+		880CB0832A050A6C00CE4DB5 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0822A050A6C00CE4DB5 /* HeroView.swift */; };
+		880CB0852A050C7900CE4DB5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0842A050C7900CE4DB5 /* Colors.swift */; };
+		880CB08A2A050F4D00CE4DB5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0892A050F4D00CE4DB5 /* Fonts.swift */; };
+		880CB08B2A05193500CE4DB5 /* karla_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880CB0882A050E7C00CE4DB5 /* karla_regular.ttf */; };
+		880CB08C2A05193700CE4DB5 /* markazi_text_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880CB0872A050E7C00CE4DB5 /* markazi_text_regular.ttf */; };
 		88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472B2A02D1B300849D05 /* Onboarding.swift */; };
 		88CC47302A03985400849D05 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* Home.swift */; };
 		88CC47322A03988B00849D05 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* Menu.swift */; };
@@ -24,6 +29,12 @@
 
 /* Begin PBXFileReference section */
 		880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dish+Extension.swift"; sourceTree = "<group>"; };
+		880CB0822A050A6C00CE4DB5 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		880CB0842A050C7900CE4DB5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		880CB0872A050E7C00CE4DB5 /* markazi_text_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = markazi_text_regular.ttf; sourceTree = "<group>"; };
+		880CB0882A050E7C00CE4DB5 /* karla_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = karla_regular.ttf; sourceTree = "<group>"; };
+		880CB0892A050F4D00CE4DB5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		880CB08D2A051BA200CE4DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		88CC472B2A02D1B300849D05 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		88CC472F2A03985400849D05 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		88CC47312A03988B00849D05 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -50,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		880CB0862A050E6900CE4DB5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				880CB0882A050E7C00CE4DB5 /* karla_regular.ttf */,
+				880CB0872A050E7C00CE4DB5 /* markazi_text_regular.ttf */,
+				880CB0842A050C7900CE4DB5 /* Colors.swift */,
+				880CB0892A050F4D00CE4DB5 /* Fonts.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		88FC8BFF2A0251E500841CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +91,11 @@
 		88FC8C0A2A0251E500841CA0 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				880CB08D2A051BA200CE4DB5 /* Info.plist */,
+				880CB0862A050E6900CE4DB5 /* Design */,
 				88FC8C0B2A0251E500841CA0 /* RestaurantApp.swift */,
 				88CC472B2A02D1B300849D05 /* Onboarding.swift */,
+				880CB0822A050A6C00CE4DB5 /* HeroView.swift */,
 				88CC47332A03A2FD00849D05 /* UserProfile.swift */,
 				88CC472F2A03985400849D05 /* Home.swift */,
 				88CC47312A03988B00849D05 /* Menu.swift */,
@@ -152,8 +177,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880CB08C2A05193700CE4DB5 /* markazi_text_regular.ttf in Resources */,
 				88FC8C132A0251E600841CA0 /* Preview Assets.xcassets in Resources */,
 				88FC8C102A0251E500841CA0 /* Assets.xcassets in Resources */,
+				880CB08B2A05193500CE4DB5 /* karla_regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,13 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880CB08A2A050F4D00CE4DB5 /* Fonts.swift in Sources */,
 				88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */,
 				88CC47302A03985400849D05 /* Home.swift in Sources */,
+				880CB0832A050A6C00CE4DB5 /* HeroView.swift in Sources */,
 				88CC473A2A03BCF800849D05 /* MenuList.swift in Sources */,
 				88CC47372A03B99300849D05 /* FetchedObjects.swift in Sources */,
 				880CB0812A042C3F00CE4DB5 /* Dish+Extension.swift in Sources */,
 				88CC47382A03B99300849D05 /* Persistence.swift in Sources */,
 				88CC473F2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld in Sources */,
+				880CB0852A050C7900CE4DB5 /* Colors.swift in Sources */,
 				88CC47342A03A2FD00849D05 /* UserProfile.swift in Sources */,
 				88CC473C2A03BD1800849D05 /* MenuItem.swift in Sources */,
 				88CC47322A03988B00849D05 /* Menu.swift in Sources */,
@@ -306,6 +336,7 @@
 				DEVELOPMENT_TEAM = 82WXEWTYFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Restaurant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -335,6 +366,7 @@
 				DEVELOPMENT_TEAM = 82WXEWTYFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Restaurant/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
