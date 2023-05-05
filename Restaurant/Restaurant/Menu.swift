@@ -11,6 +11,8 @@ import CoreData
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @State var searchText = ""
+    
     @State var isError = false
     @State var errorMessage: String = ""
     
@@ -21,7 +23,8 @@ struct Menu: View {
             Text("Little Lemon")
             Text("Chicago")
             Text("[Description]")
-            FetchedObjects() { (dishes: [Dish]) in
+            TextField("Search menu", text: $searchText)
+            FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {
                     if dishes.count != 0 {
                         ForEach(dishes, id: \.self) { dish in
@@ -62,6 +65,18 @@ struct Menu: View {
             print(error)
             errorMessage = "Unable to fetch data"
             isError = true
+        }
+    }
+    
+    func buildSortDescriptors() -> [NSSortDescriptor] {
+        return [NSSortDescriptor (key: "title", ascending: true, selector: #selector(NSString.localizedStandardCompare))]
+    }
+    
+    func buildPredicate() -> NSPredicate {
+        if searchText.isEmpty {
+            return NSPredicate(value: true)
+        } else {
+            return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
         }
     }
 }
