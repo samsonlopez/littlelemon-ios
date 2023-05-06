@@ -32,17 +32,18 @@ struct PersonalInformationView: View {
                 .textStyle()
             TextField("", text: $email)
                 .textFieldStyle()
+                .keyboardType(.emailAddress)
         }
         .padding()
         .onAppear() {
-            getProfileInfo()
+            getProfile()
         }
     }
     
-    func getProfileInfo() {
-        let userDefaults = UserDefaults.standard
-        firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
-        lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
-        email = userDefaults.string(forKey: "EmailKey") ?? ""
+    func getProfile() {
+        let userSettings = UserSettings.shared
+        firstName = userSettings.firstName
+        lastName = userSettings.lastName
+        email = userSettings.email
     }
 }

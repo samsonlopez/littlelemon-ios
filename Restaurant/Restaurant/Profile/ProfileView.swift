@@ -16,12 +16,11 @@ struct ProfileView: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
+    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
-        let userDefaults = UserDefaults.standard
-//        let firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
-//        let lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
-//        let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             ProfileNavigationBar(onBackButtonSelected: {
                 self.presentation.wrappedValue.dismiss()
@@ -42,7 +41,7 @@ struct ProfileView: View {
             Spacer()
 
             Button(action: {
-                UserDefaults.standard.set(false, forKey: "IsLoggedInKey")
+                UserSettings.shared.clear()
                 navigateToOnboardingView = true
             }, label: {
                 Text("Logout")
@@ -51,9 +50,9 @@ struct ProfileView: View {
                 PrimaryButtonStyle()
             ).padding()
             
-            
             HStack {
                 Button {
+                    discardProfileChanges()
                 } label: {
                     Text("Discard Changes")
                         .font(Fonts.labelText())
@@ -62,6 +61,15 @@ struct ProfileView: View {
                 )
                 Spacer().frame(width: 20)
                 Button {
+                    if (firstName.trim.isEmpty || lastName.trim.isEmpty || email.trim.isEmpty) {
+                        alertMessage = "Please enter all required fields"
+                        showAlert.toggle()
+                    } else if !email.isValidEmail() {
+                        alertMessage = "Please enter a valid email"
+                        showAlert.toggle()
+                    } else {
+                        saveProfileChanges()
+                    }
                 } label: {
                     Text("Save Changes")
                         .font(Fonts.labelText())
@@ -72,7 +80,25 @@ struct ProfileView: View {
             Spacer()
         }
         .navigationBarHidden(true)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertMessage))
+        }
     }
+    
+    fileprivate func saveProfileChanges() {
+        let userSettings = UserSettings.shared
+        userSettings.firstName = firstName
+        userSettings.lastName = lastName
+        userSettings.email = email
+    }
+    
+    fileprivate func discardProfileChanges() {
+        let userSettings = UserSettings.shared
+        firstName = userSettings.firstName
+        lastName = userSettings.lastName
+        email = userSettings.email
+    }
+
 }
 
 private struct ProfileNavigationBar: View {
