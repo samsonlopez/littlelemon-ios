@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Binding var isLoggedIn: Bool
+
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
-    @Binding var isLoggedIn: Bool
     
     var body: some View {
         NavigationView {

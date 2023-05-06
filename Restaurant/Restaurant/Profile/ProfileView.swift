@@ -16,6 +16,9 @@ struct ProfileView: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
+    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
         VStack {
@@ -49,6 +52,7 @@ struct ProfileView: View {
             
             HStack {
                 Button {
+                    discardProfileChanges()
                 } label: {
                     Text("Discard Changes")
                         .font(Fonts.labelText())
@@ -57,6 +61,15 @@ struct ProfileView: View {
                 )
                 Spacer().frame(width: 20)
                 Button {
+                    if (firstName.trim.isEmpty || lastName.trim.isEmpty || email.trim.isEmpty) {
+                        alertMessage = "Please enter all required fields"
+                        showAlert.toggle()
+                    } else if !email.isValidEmail() {
+                        alertMessage = "Please enter a valid email"
+                        showAlert.toggle()
+                    } else {
+                        saveProfileChanges()
+                    }
                 } label: {
                     Text("Save Changes")
                         .font(Fonts.labelText())
@@ -67,7 +80,25 @@ struct ProfileView: View {
             Spacer()
         }
         .navigationBarHidden(true)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertMessage))
+        }
     }
+    
+    fileprivate func saveProfileChanges() {
+        let userSettings = UserSettings.shared
+        userSettings.firstName = firstName
+        userSettings.lastName = lastName
+        userSettings.email = email
+    }
+    
+    fileprivate func discardProfileChanges() {
+        let userSettings = UserSettings.shared
+        firstName = userSettings.firstName
+        lastName = userSettings.lastName
+        email = userSettings.email
+    }
+
 }
 
 private struct ProfileNavigationBar: View {

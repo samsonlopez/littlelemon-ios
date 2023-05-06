@@ -13,6 +13,9 @@ struct RegistrationFormView: View {
     @Binding var email: String
     @Binding var isLoggedIn: Bool
     
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
     let kFirstName = "FirstNameKey"
     let kLastName = "LastNameKey"
     let kEmail = "EmailKey"
@@ -37,10 +40,13 @@ struct RegistrationFormView: View {
             }.padding()
             
             Button {
-                if(!firstName.isEmpty &&
-                   !lastName.isEmpty &&
-                   !email.isEmpty) &&
-                    email.isValidEmail() {
+                if (firstName.trim.isEmpty || lastName.trim.isEmpty || email.trim.isEmpty) {
+                    alertMessage = "Please enter all required fields"
+                    showAlert.toggle()
+                } else if !email.isValidEmail() {
+                    alertMessage = "Please enter a valid email"
+                    showAlert.toggle()
+                } else {
                     isLoggedIn = true
                     saveProfile()
                 }
@@ -50,6 +56,9 @@ struct RegistrationFormView: View {
             }
             .buttonStyle(PrimaryButtonStyle())
             .padding()
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertMessage))
+            }
             
             Spacer()
         }
@@ -65,12 +74,10 @@ struct RegistrationFormView: View {
 }
 
 struct RegistrationFormView_Previews: PreviewProvider {
-    
     @State static var firstName = "Jane"
     @State static var lastName = "Smith"
     @State static var email = "jane.smith@world.com"
     @State static var isLoggedIn = false
-
     
     static var previews: some View {
         RegistrationFormView(firstName: $firstName, lastName: $lastName, email: $email, isLoggedIn: $isLoggedIn)
