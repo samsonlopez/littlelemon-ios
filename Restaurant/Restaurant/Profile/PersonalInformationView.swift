@@ -32,6 +32,7 @@ struct PersonalInformationView: View {
                 .textStyle()
             TextField("", text: $email)
                 .textFieldStyle()
+                .keyboardType(.emailAddress)
         }
         .padding()
         .onAppear() {
