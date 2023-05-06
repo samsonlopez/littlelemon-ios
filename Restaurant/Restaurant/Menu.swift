@@ -12,6 +12,7 @@ struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var searchText = ""
+    @State var categorySelected = Category.all
     
     @State var isError = false
     @State var errorMessage: String = ""
@@ -31,6 +32,10 @@ struct Menu: View {
                     HeroView()
                     SearchBar(searchText: $searchText)
                 }.background(Colors.primaryColor1)
+                
+                CategoryView { category in
+                    categorySelected = category
+                }
 
                 FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                     ForEach(dishes, id: \.self) { dish in
@@ -66,10 +71,18 @@ struct Menu: View {
     }
     
     func buildPredicate() -> NSPredicate {
-        if searchText.isEmpty {
-            return NSPredicate(value: true)
+        if (categorySelected == .all) {
+            if searchText.isEmpty {
+                return NSPredicate(value: true)
+            } else {
+                return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+            }
         } else {
-            return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+            if searchText.isEmpty {
+                return NSPredicate(format: "category == %@", categorySelected.value)
+            } else {
+                return NSPredicate(format: "title CONTAINS[cd] %@ AND category == %@", searchText, categorySelected.value)
+            }
         }
     }
 }
@@ -84,15 +97,15 @@ private struct SearchBar: View {
                 Image(
                     systemName: "magnifyingglass"
                 )
-                .foregroundColor(.gray)
+                .foregroundColor(Colors.primaryColor1)
                 .padding(.trailing, 10)
                 
                 TextField(
-                    "Enter search phrase",
+                    "Search menu",
                     text: $searchText
                 )
             }
-            .padding()
+            .padding(10)
         }
         .background(Color.white.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 8))

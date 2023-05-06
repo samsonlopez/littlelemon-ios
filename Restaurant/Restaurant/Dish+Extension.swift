@@ -15,6 +15,7 @@ extension Dish {
                 dish.desc = menuItem.description
                 dish.image = menuItem.image
                 dish.price = menuItem.price
+                dish.category = menuItem.category
             }
         }
     }

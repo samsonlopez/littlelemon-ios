@@ -61,7 +61,6 @@ struct RegistrationFormView: View {
     }
     
     fileprivate func saveRegistrationFields() {
-        print("Saving registration fields")
         let userDefaults = UserDefaults.standard
         userDefaults.set(firstName, forKey: kFirstName)
         userDefaults.set(lastName, forKey: kLastName)
