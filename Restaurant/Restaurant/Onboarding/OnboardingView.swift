@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct Onboarding: View {
+struct OnboardingView: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
-    @State var isLoggedIn = false
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
         NavigationView {
@@ -19,16 +19,13 @@ struct Onboarding: View {
                 NavigationLink(destination: HomeView(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200)
-                    .padding(.vertical, 20)
+                LogoView()
                 HeroView()
                 RegistrationFormView(
                     firstName: $firstName,
                     lastName: $lastName,
-                    email: $email
+                    email: $email,
+                    isLoggedIn: $isLoggedIn
                 )
                 .padding(.vertical, 20)
                 .frame(maxWidth: .infinity)
@@ -45,7 +42,9 @@ struct Onboarding: View {
 }
 
 struct Onboarding_Previews: PreviewProvider {
+    @State static var isLoggedIn = true
+    
     static var previews: some View {
-        Onboarding()
+        OnboardingView(isLoggedIn: $isLoggedIn)
     }
 }

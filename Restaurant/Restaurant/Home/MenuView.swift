@@ -14,6 +14,8 @@ struct MenuView: View {
     @State var searchText = ""
     @State var categorySelected = Category.all
     
+    @State var showProfileView = false
+    
     @State var isError = false
     @State var errorMessage: String = ""
     
@@ -21,21 +23,24 @@ struct MenuView: View {
     
     var body: some View {
         VStack {
+            MenuNavigationBar(onProfileSelected: {
+                print("profile selected")
+                showProfileView = true
+            })
+            NavigationLink(
+                destination: ProfileView(),
+                isActive: $showProfileView,
+                label: { EmptyView() }
+            )
             ScrollView {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200)
-                    .padding(.vertical, 20)
-                
                 VStack(spacing: 0) {
                     HeroView()
                     SearchBar(searchText: $searchText)
                 }.background(Colors.primaryColor1)
                 
-                CategoryView { category in
+                CategoryView(onCatagorySelected: { category in
                     categorySelected = category
-                }
+                })
 
                 FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                     ForEach(dishes, id: \.self) { dish in
@@ -49,8 +54,13 @@ struct MenuView: View {
         }
         .alert(errorMessage, isPresented: $isError) {
         }
+        .navigationBarBackButtonHidden(true)
+        .background(
+
+        )
     }
     
+    @MainActor
     func getMenuData() async {
         let url = URL(string: networkURLString)!
         do {
@@ -110,6 +120,29 @@ private struct SearchBar: View {
         .background(Color.white.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .padding(12)
+    }
+}
+
+private struct MenuNavigationBar: View {
+    var onProfileSelected: () -> Void
+    
+    var body: some View {
+        ZStack(alignment: .trailing) {
+            Image("logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200)
+                .frame(maxWidth: .infinity)
+            Button {
+                onProfileSelected()
+            } label: {
+                Image("profile-image-placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 45)
+            }.padding(.trailing, 12)
+        }.padding(.vertical, 20)
+            .frame(maxWidth: .infinity)
     }
 }
 
