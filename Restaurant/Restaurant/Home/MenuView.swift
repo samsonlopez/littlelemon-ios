@@ -24,7 +24,6 @@ struct MenuView: View {
     var body: some View {
         VStack {
             MenuNavigationBar(onProfileSelected: {
-                print("profile selected")
                 showProfileView = true
             })
             NavigationLink(
@@ -147,7 +146,10 @@ private struct MenuNavigationBar: View {
 }
 
 struct Menu_Previews: PreviewProvider {
+    static let persistence = PersistenceController.shared
+    
     static var previews: some View {
         MenuView()
+            .environment(\.managedObjectContext, persistence.container.viewContext)
     }
 }
