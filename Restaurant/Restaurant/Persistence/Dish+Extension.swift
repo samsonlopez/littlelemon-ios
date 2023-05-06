@@ -12,8 +12,10 @@ extension Dish {
             if !exists(name: menuItem.title, context) {
                 let dish = Dish(context: context)
                 dish.title = menuItem.title
+                dish.desc = menuItem.description
                 dish.image = menuItem.image
                 dish.price = menuItem.price
+                dish.category = menuItem.category
             }
         }
     }
@@ -36,5 +38,4 @@ extension Dish {
         }
     }
 }
-
 

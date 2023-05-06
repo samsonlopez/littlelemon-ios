@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserProfile: View {
+struct ProfileView: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
         let userDefaults = UserDefaults.standard
@@ -16,7 +16,7 @@ struct UserProfile: View {
         let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             Text("Personal information")
-            Image("profile_image")
+            Image("profile-image-placeholder")
             Text(firstName)
             Text(lastName)
             Text(email)
@@ -33,6 +33,6 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        ProfileView()
     }
 }
