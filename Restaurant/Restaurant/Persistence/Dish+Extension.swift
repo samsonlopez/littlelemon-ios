@@ -37,5 +37,17 @@ extension Dish {
             return false
         }
     }
+    
+    static func deleteAllDishes(_ context: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dish")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print("Error deleting objects")
+        }
+    }
 }
 

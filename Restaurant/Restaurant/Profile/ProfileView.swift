@@ -42,6 +42,7 @@ struct ProfileView: View {
 
             Button(action: {
                 UserSettings.shared.clear()
+                Dish.deleteAllDishes(viewContext)
                 navigateToOnboardingView = true
             }, label: {
                 Text("Logout")
