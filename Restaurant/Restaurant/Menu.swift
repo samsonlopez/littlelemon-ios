@@ -20,32 +20,25 @@ struct Menu: View {
     
     var body: some View {
         VStack {
-            Text("Little Lemon")
-            Text("Chicago")
-            Text("[Description]")
-            TextField("Search menu", text: $searchText)
-            FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
-                List {
-                    if dishes.count != 0 {
-                        ForEach(dishes, id: \.self) { dish in
-                            HStack {
-                                VStack (alignment: .leading) {
-                                    Text(dish.title!).font(Font.headline.weight(.bold))
-                                    Spacer()
-                                    Text("$" + dish.price!)
-                                }
-                                Spacer()
-                                AsyncImage(url: URL(string: dish.image!)) {image in image.resizable().aspectRatio(contentMode: .fit).frame(width: 150, height: 100)
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                            }
-                        }
+            ScrollView {
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200)
+                    .padding(.vertical, 20)
+                
+                VStack(spacing: 0) {
+                    HeroView()
+                    SearchBar(searchText: $searchText)
+                }.background(Colors.primaryColor1)
+
+                FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
+                    ForEach(dishes, id: \.self) { dish in
+                        MenuItemView(dish: dish)
                     }
-                }.listStyle(PlainListStyle())
+                }
             }
         }
-        .padding()
         .task {
             await getMenuData()
         }
@@ -78,6 +71,32 @@ struct Menu: View {
         } else {
             return NSPredicate(format: "title CONTAINS[cd] %@", searchText)
         }
+    }
+}
+
+private struct SearchBar: View {
+    
+    @Binding var searchText: String
+    
+    var body: some View {
+        VStack() {
+            HStack() {
+                Image(
+                    systemName: "magnifyingglass"
+                )
+                .foregroundColor(.gray)
+                .padding(.trailing, 10)
+                
+                TextField(
+                    "Enter search phrase",
+                    text: $searchText
+                )
+            }
+            .padding()
+        }
+        .background(Color.white.opacity(0.5))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .padding(12)
     }
 }
 
