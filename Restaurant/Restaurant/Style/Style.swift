@@ -9,18 +9,18 @@ import Foundation
 import SwiftUI
 
 extension Text {
-    func onboardingTextStyle() -> some View {
+    func textStyle() -> some View {
         self
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundColor(Colors.primaryColor1)
             .font(Fonts.labelText())
-            .padding(.bottom, 12)
+            .padding(.bottom, 8)
     }
 }
 
 extension TextField {
-    func onboardingTextFieldStyle() -> some View {
-        self.padding()
+    func textFieldStyle() -> some View {
+        self.padding(10)
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .strokeBorder(Color.gray, lineWidth: 1)
@@ -29,7 +29,7 @@ extension TextField {
     }
 }
 
-struct CustomButtonStyle: ButtonStyle {
+struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -48,7 +48,7 @@ struct CustomButtonStyle: ButtonStyle {
     }
 }
 
-struct CustomButtonStyle2: ButtonStyle {
+struct SecondaryButtonStyle1: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -67,12 +67,15 @@ struct CustomButtonStyle2: ButtonStyle {
     }
 }
 
-struct CustomButtonStyle3: ButtonStyle {
+struct SecondaryButtonStyle2: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
             .padding(10)
-            .foregroundColor(Colors.highlightColor1)
+            .foregroundColor(Colors.highlightColor2)
+            .background(
+                configuration.isPressed ? Colors.primaryColor1.opacity(0.1) : Colors.primaryColor1.opacity(0.3)
+            )
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)

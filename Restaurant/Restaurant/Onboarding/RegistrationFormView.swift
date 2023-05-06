@@ -19,36 +19,40 @@ struct RegistrationFormView: View {
     let kIsLoggedIn = "IsLoggedInKey"
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("First name *")
-                .onboardingTextStyle()
-            TextField("", text: $firstName)
-                .onboardingTextFieldStyle()
-            Text("Last name *")
-                .onboardingTextStyle()
-            TextField("", text: $lastName)
-                .onboardingTextFieldStyle()
-            Text("E-mail *")
-                .onboardingTextStyle()
-            TextField("", text: $email)
-                .onboardingTextFieldStyle()
-                .keyboardType(.emailAddress)
-        }.padding()
-        
-        Button {
-            if(!firstName.isEmpty &&
-               !lastName.isEmpty &&
-               !email.isEmpty) &&
-                isValidEmail(email) {
-                saveRegistrationFields()
-                isLoggedIn = true
+        VStack {
+            VStack(alignment: .leading, spacing: 0) {
+                Text("First name *")
+                    .textStyle()
+                TextField("", text: $firstName)
+                    .textFieldStyle()
+                Text("Last name *")
+                    .textStyle()
+                TextField("", text: $lastName)
+                    .textFieldStyle()
+                Text("E-mail *")
+                    .textStyle()
+                TextField("", text: $email)
+                    .textFieldStyle()
+                    .keyboardType(.emailAddress)
+            }.padding()
+            
+            Button {
+                if(!firstName.isEmpty &&
+                   !lastName.isEmpty &&
+                   !email.isEmpty) &&
+                    isValidEmail(email) {
+                    saveRegistrationFields()
+                    isLoggedIn = true
+                }
+            } label: {
+                Text("Register")
+                    .font(Fonts.labelText())
             }
-        } label: {
-            Text("Register")
-                .font(Fonts.labelText())
+            .buttonStyle(PrimaryButtonStyle())
+            .padding()
+            
+            Spacer()
         }
-        .buttonStyle(CustomButtonStyle())
-        .padding()
     }
     
     func isValidEmail(_ email: String) -> Bool {

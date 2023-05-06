@@ -27,8 +27,6 @@ struct OnboardingView: View {
                     email: $email,
                     isLoggedIn: $isLoggedIn
                 )
-                .padding(.vertical, 20)
-                .frame(maxWidth: .infinity)
                 Spacer()
                 
             }

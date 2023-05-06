@@ -12,15 +12,18 @@ struct ProfileView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State var navigateToOnboardingView = false
+    
+    @State var firstName = ""
+    @State var lastName = ""
+    @State var email = ""
 
     var body: some View {
         let userDefaults = UserDefaults.standard
-        let firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
-        let lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
-        let email = userDefaults.string(forKey: "EmailKey") ?? ""
+//        let firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
+//        let lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
+//        let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             ProfileNavigationBar(onBackButtonSelected: {
-                print("back button selected")
                 self.presentation.wrappedValue.dismiss()
             })
             NavigationLink(
@@ -28,17 +31,44 @@ struct ProfileView: View {
                 isActive: $navigateToOnboardingView,
                 label: { EmptyView() }
             )
-            Text("Personal information")
-            Image("profile-image-placeholder")
-            Text(firstName)
-            Text(lastName)
-            Text(email)
+            
+            PersonalInformationView(
+                firstName: $firstName,
+                lastName: $lastName,
+                email: $email
+            )
+            .padding(.vertical, 20)
+            .frame(maxWidth: .infinity)
+            Spacer()
+
             Button(action: {
                 UserDefaults.standard.set(false, forKey: "IsLoggedInKey")
                 navigateToOnboardingView = true
             }, label: {
                 Text("Logout")
             })
+            .buttonStyle(
+                PrimaryButtonStyle()
+            ).padding()
+            
+            
+            HStack {
+                Button {
+                } label: {
+                    Text("Discard Changes")
+                        .font(Fonts.labelText())
+                }.buttonStyle(
+                    SecondaryButtonStyle2()
+                )
+                Spacer().frame(width: 20)
+                Button {
+                } label: {
+                    Text("Save Changes")
+                        .font(Fonts.labelText())
+                }.buttonStyle(
+                    SecondaryButtonStyle1()
+                )
+            }.padding(.horizontal, 16)
             Spacer()
         }
         .navigationBarHidden(true)

@@ -36,7 +36,7 @@ struct HeroView: View {
             }
             .padding(.bottom, 8)
         }
-        .padding(16)
+        .padding(12)
         .background(Colors.primaryColor1)
     }
 }
