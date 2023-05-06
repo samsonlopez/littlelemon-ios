@@ -40,7 +40,7 @@ struct RegistrationFormView: View {
                 if(!firstName.isEmpty &&
                    !lastName.isEmpty &&
                    !email.isEmpty) &&
-                    isValidEmail(email) {
+                    email.isValidEmail() {
                     isLoggedIn = true
                     saveProfile()
                 }
@@ -53,14 +53,6 @@ struct RegistrationFormView: View {
             
             Spacer()
         }
-    }
-    
-    // TODO: Extract this to a String extension and reuse it for email validation in profile view.
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
     }
     
     fileprivate func saveProfile() {
