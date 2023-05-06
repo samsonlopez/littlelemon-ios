@@ -19,9 +19,9 @@
 		880CB0952A062EFF00CE4DB5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0942A062EFF00CE4DB5 /* CategoryView.swift */; };
 		880CB0992A0644CB00CE4DB5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0982A0644CB00CE4DB5 /* Category.swift */; };
 		88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472B2A02D1B300849D05 /* Onboarding.swift */; };
-		88CC47302A03985400849D05 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* Home.swift */; };
-		88CC47322A03988B00849D05 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* Menu.swift */; };
-		88CC47342A03A2FD00849D05 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47332A03A2FD00849D05 /* UserProfile.swift */; };
+		88CC47302A03985400849D05 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* HomeView.swift */; };
+		88CC47322A03988B00849D05 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* MenuView.swift */; };
+		88CC47342A03A2FD00849D05 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47332A03A2FD00849D05 /* ProfileView.swift */; };
 		88CC47372A03B99300849D05 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47352A03B99300849D05 /* FetchedObjects.swift */; };
 		88CC47382A03B99300849D05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47362A03B99300849D05 /* Persistence.swift */; };
 		88CC473A2A03BCF800849D05 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47392A03BCF800849D05 /* MenuList.swift */; };
@@ -46,9 +46,9 @@
 		880CB0942A062EFF00CE4DB5 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		880CB0982A0644CB00CE4DB5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		88CC472B2A02D1B300849D05 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		88CC472F2A03985400849D05 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		88CC47312A03988B00849D05 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		88CC47332A03A2FD00849D05 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		88CC472F2A03985400849D05 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		88CC47312A03988B00849D05 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		88CC47332A03A2FD00849D05 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		88CC47352A03B99300849D05 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
 		88CC47362A03B99300849D05 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		88CC47392A03BCF800849D05 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
@@ -74,8 +74,7 @@
 		880CB0862A050E6900CE4DB5 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				880CB0882A050E7C00CE4DB5 /* karla_regular.ttf */,
-				880CB0872A050E7C00CE4DB5 /* markazi_text_regular.ttf */,
+				880CB09E2A0657D200CE4DB5 /* Custom Fonts */,
 				880CB0842A050C7900CE4DB5 /* Colors.swift */,
 				880CB0892A050F4D00CE4DB5 /* Fonts.swift */,
 				880CB0902A05568800CE4DB5 /* Style.swift */,
@@ -91,6 +90,55 @@
 				880CB0982A0644CB00CE4DB5 /* Category.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		880CB09A2A0655A100CE4DB5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				88CC472F2A03985400849D05 /* HomeView.swift */,
+				88CC47312A03988B00849D05 /* MenuView.swift */,
+				880CB0922A058FD800CE4DB5 /* MenuItemView.swift */,
+				880CB0942A062EFF00CE4DB5 /* CategoryView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		880CB09B2A0655B400CE4DB5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				880CB0822A050A6C00CE4DB5 /* HeroView.swift */,
+				88CC472B2A02D1B300849D05 /* Onboarding.swift */,
+				880CB08E2A053C1B00CE4DB5 /* RegistrationFormView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		880CB09C2A0655F300CE4DB5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				88CC47332A03A2FD00849D05 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		880CB09D2A06561C00CE4DB5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				88CC473D2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld */,
+				88CC47352A03B99300849D05 /* FetchedObjects.swift */,
+				88CC47362A03B99300849D05 /* Persistence.swift */,
+				880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		880CB09E2A0657D200CE4DB5 /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				880CB0882A050E7C00CE4DB5 /* karla_regular.ttf */,
+				880CB0872A050E7C00CE4DB5 /* markazi_text_regular.ttf */,
+			);
+			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 		88FC8BFF2A0251E500841CA0 = {
@@ -112,22 +160,14 @@
 		88FC8C0A2A0251E500841CA0 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				880CB0972A0644AD00CE4DB5 /* Model */,
-				880CB08D2A051BA200CE4DB5 /* Info.plist */,
-				880CB0862A050E6900CE4DB5 /* Style */,
 				88FC8C0B2A0251E500841CA0 /* RestaurantApp.swift */,
-				88CC472B2A02D1B300849D05 /* Onboarding.swift */,
-				880CB0822A050A6C00CE4DB5 /* HeroView.swift */,
-				880CB08E2A053C1B00CE4DB5 /* RegistrationFormView.swift */,
-				88CC47332A03A2FD00849D05 /* UserProfile.swift */,
-				88CC472F2A03985400849D05 /* Home.swift */,
-				88CC47312A03988B00849D05 /* Menu.swift */,
-				880CB0942A062EFF00CE4DB5 /* CategoryView.swift */,
-				880CB0922A058FD800CE4DB5 /* MenuItemView.swift */,
-				88CC47352A03B99300849D05 /* FetchedObjects.swift */,
-				88CC47362A03B99300849D05 /* Persistence.swift */,
-				88CC473D2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld */,
-				880CB0802A042C3F00CE4DB5 /* Dish+Extension.swift */,
+				880CB09B2A0655B400CE4DB5 /* Onboarding */,
+				880CB09A2A0655A100CE4DB5 /* Home */,
+				880CB09C2A0655F300CE4DB5 /* Profile */,
+				880CB0862A050E6900CE4DB5 /* Style */,
+				880CB0972A0644AD00CE4DB5 /* Model */,
+				880CB09D2A06561C00CE4DB5 /* Persistence */,
+				880CB08D2A051BA200CE4DB5 /* Info.plist */,
 				88FC8C0F2A0251E500841CA0 /* Assets.xcassets */,
 				88FC8C112A0251E600841CA0 /* Preview Content */,
 			);
@@ -217,7 +257,7 @@
 				880CB08A2A050F4D00CE4DB5 /* Fonts.swift in Sources */,
 				88CC472C2A02D1B300849D05 /* Onboarding.swift in Sources */,
 				880CB0992A0644CB00CE4DB5 /* Category.swift in Sources */,
-				88CC47302A03985400849D05 /* Home.swift in Sources */,
+				88CC47302A03985400849D05 /* HomeView.swift in Sources */,
 				880CB0832A050A6C00CE4DB5 /* HeroView.swift in Sources */,
 				88CC473A2A03BCF800849D05 /* MenuList.swift in Sources */,
 				88CC47372A03B99300849D05 /* FetchedObjects.swift in Sources */,
@@ -228,9 +268,9 @@
 				88CC47382A03B99300849D05 /* Persistence.swift in Sources */,
 				88CC473F2A03F5A500849D05 /* ExampleDatabase.xcdatamodeld in Sources */,
 				880CB0852A050C7900CE4DB5 /* Colors.swift in Sources */,
-				88CC47342A03A2FD00849D05 /* UserProfile.swift in Sources */,
+				88CC47342A03A2FD00849D05 /* ProfileView.swift in Sources */,
 				88CC473C2A03BD1800849D05 /* MenuItem.swift in Sources */,
-				88CC47322A03988B00849D05 /* Menu.swift in Sources */,
+				88CC47322A03988B00849D05 /* MenuView.swift in Sources */,
 				880CB08F2A053C1B00CE4DB5 /* RegistrationFormView.swift in Sources */,
 				88FC8C0C2A0251E500841CA0 /* RestaurantApp.swift in Sources */,
 			);

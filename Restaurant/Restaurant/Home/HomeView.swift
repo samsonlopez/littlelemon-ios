@@ -1,5 +1,5 @@
 //
-//  Home.swift
+//  HomeView.swift
 //  Restaurant
 //
 //  Created by Samson Lopez on 04/05/2023.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeView: View {
     let persistence = PersistenceController.shared
     
     var body: some View {
         TabView {
-            Menu()
+            MenuView()
                 .environment(\.managedObjectContext, persistence.container.viewContext)
                 .tabItem({
                     Label("Menu", systemImage: "list.dash")
                 })
-            UserProfile()
+            ProfileView()
                 .tabItem({
                     Label("Profile", systemImage: "square.and.pencil")
                 })
@@ -26,8 +26,8 @@ struct Home: View {
     }
 }
 
-struct Home_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
 }

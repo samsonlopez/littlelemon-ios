@@ -1,5 +1,5 @@
 //
-//  Menu.swift
+//  MenuView.swift
 //  Restaurant
 //
 //  Created by Samson Lopez on 04/05/2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct Menu: View {
+struct MenuView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var searchText = ""
@@ -115,6 +115,6 @@ private struct SearchBar: View {
 
 struct Menu_Previews: PreviewProvider {
     static var previews: some View {
-        Menu()
+        MenuView()
     }
 }

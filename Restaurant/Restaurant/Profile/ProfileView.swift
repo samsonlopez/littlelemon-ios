@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserProfile: View {
+struct ProfileView: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
         let userDefaults = UserDefaults.standard
@@ -33,6 +33,6 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        ProfileView()
     }
 }

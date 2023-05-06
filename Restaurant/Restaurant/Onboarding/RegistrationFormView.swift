@@ -21,7 +21,7 @@ struct RegistrationFormView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            NavigationLink(destination: Home(), isActive: $isLoggedIn) { }
+            NavigationLink(destination: HomeView(), isActive: $isLoggedIn) { }
             Text("First name *")
                 .onboardingTextStyle()
             TextField("", text: $firstName)
