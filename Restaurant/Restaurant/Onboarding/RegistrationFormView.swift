@@ -41,8 +41,8 @@ struct RegistrationFormView: View {
                    !lastName.isEmpty &&
                    !email.isEmpty) &&
                     isValidEmail(email) {
-                    saveRegistrationFields()
                     isLoggedIn = true
+                    saveProfile()
                 }
             } label: {
                 Text("Register")
@@ -55,6 +55,7 @@ struct RegistrationFormView: View {
         }
     }
     
+    // TODO: Extract this to a String extension and reuse it for email validation in profile view.
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -62,12 +63,12 @@ struct RegistrationFormView: View {
         return emailPred.evaluate(with: email)
     }
     
-    fileprivate func saveRegistrationFields() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(firstName, forKey: kFirstName)
-        userDefaults.set(lastName, forKey: kLastName)
-        userDefaults.set(email, forKey: kEmail)
-        userDefaults.set(isLoggedIn, forKey: kIsLoggedIn)
+    fileprivate func saveProfile() {
+        let userSettings = UserSettings.shared
+        userSettings.firstName = firstName
+        userSettings.lastName = lastName
+        userSettings.email = email
+        userSettings.isLoggedIn = isLoggedIn
     }
 }
 

@@ -20,6 +20,7 @@
 		880CB0992A0644CB00CE4DB5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0982A0644CB00CE4DB5 /* Category.swift */; };
 		880CB0A02A06668200CE4DB5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB09F2A06668200CE4DB5 /* LogoView.swift */; };
 		880CB0A42A06986E00CE4DB5 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0A32A06986E00CE4DB5 /* PersonalInformationView.swift */; };
+		880CB0A82A06ECB700CE4DB5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0A72A06ECB700CE4DB5 /* UserSettings.swift */; };
 		88CC472C2A02D1B300849D05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472B2A02D1B300849D05 /* OnboardingView.swift */; };
 		88CC47302A03985400849D05 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* HomeView.swift */; };
 		88CC47322A03988B00849D05 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* MenuView.swift */; };
@@ -49,6 +50,7 @@
 		880CB0982A0644CB00CE4DB5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		880CB09F2A06668200CE4DB5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		880CB0A32A06986E00CE4DB5 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
+		880CB0A72A06ECB700CE4DB5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		88CC472B2A02D1B300849D05 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		88CC472F2A03985400849D05 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		88CC47312A03988B00849D05 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				880CB09F2A06668200CE4DB5 /* LogoView.swift */,
 				880CB0822A050A6C00CE4DB5 /* HeroView.swift */,
 				880CB08E2A053C1B00CE4DB5 /* RegistrationFormView.swift */,
+				880CB0A72A06ECB700CE4DB5 /* UserSettings.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				88CC47322A03988B00849D05 /* MenuView.swift in Sources */,
 				880CB08F2A053C1B00CE4DB5 /* RegistrationFormView.swift in Sources */,
 				88FC8C0C2A0251E500841CA0 /* RestaurantApp.swift in Sources */,
+				880CB0A82A06ECB700CE4DB5 /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +422,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,6 +453,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

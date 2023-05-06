@@ -18,10 +18,6 @@ struct ProfileView: View {
     @State var email = ""
 
     var body: some View {
-        let userDefaults = UserDefaults.standard
-//        let firstName = userDefaults.string(forKey: "FirstNameKey") ?? ""
-//        let lastName = userDefaults.string(forKey: "LastNameKey") ?? ""
-//        let email = userDefaults.string(forKey: "EmailKey") ?? ""
         VStack {
             ProfileNavigationBar(onBackButtonSelected: {
                 self.presentation.wrappedValue.dismiss()
@@ -42,7 +38,7 @@ struct ProfileView: View {
             Spacer()
 
             Button(action: {
-                UserDefaults.standard.set(false, forKey: "IsLoggedInKey")
+                UserSettings.shared.clear()
                 navigateToOnboardingView = true
             }, label: {
                 Text("Logout")
@@ -50,7 +46,6 @@ struct ProfileView: View {
             .buttonStyle(
                 PrimaryButtonStyle()
             ).padding()
-            
             
             HStack {
                 Button {

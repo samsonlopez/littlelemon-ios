@@ -28,7 +28,6 @@ struct OnboardingView: View {
                     isLoggedIn: $isLoggedIn
                 )
                 Spacer()
-                
             }
         }
         .onAppear(){

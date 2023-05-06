@@ -19,7 +19,7 @@ struct HomeView: View {
                     destination:MenuView(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
-                if !isLoggedIn {
+                if !UserSettings.shared.isLoggedIn {
                     OnboardingView(isLoggedIn: $isLoggedIn)
                 }
             }
