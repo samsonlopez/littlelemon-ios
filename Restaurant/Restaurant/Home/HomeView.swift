@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct HomeView: View {
-    let persistence = PersistenceController.shared
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @State var isLoggedIn = false
     
     var body: some View {
-        TabView {
-            MenuView()
-                .environment(\.managedObjectContext, persistence.container.viewContext)
-                .tabItem({
-                    Label("Menu", systemImage: "list.dash")
-                })
-            ProfileView()
-                .tabItem({
-                    Label("Profile", systemImage: "square.and.pencil")
-                })
+        NavigationView {
+            VStack {
+                NavigationLink(
+                    destination:MenuView(), isActive: $isLoggedIn) {
+                    EmptyView()
+                }
+                if !isLoggedIn {
+                    OnboardingView(isLoggedIn: $isLoggedIn)
+                }
+            }
         }
-        .navigationBarBackButtonHidden(true)
+        .onAppear(){
+            if UserDefaults.standard.bool(forKey: "IsLoggedInKey") {
+                isLoggedIn = true
+            }
+        }
+        .navigationBarHidden(true)
     }
 }
 

@@ -11,8 +11,7 @@ struct RegistrationFormView: View {
     @Binding var firstName: String
     @Binding var lastName: String
     @Binding var email: String
-    
-    @State var isLoggedIn = false
+    @Binding var isLoggedIn: Bool
     
     let kFirstName = "FirstNameKey"
     let kLastName = "LastNameKey"
@@ -21,7 +20,6 @@ struct RegistrationFormView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            NavigationLink(destination: HomeView(), isActive: $isLoggedIn) { }
             Text("First name *")
                 .onboardingTextStyle()
             TextField("", text: $firstName)
@@ -74,8 +72,10 @@ struct RegistrationFormView_Previews: PreviewProvider {
     @State static var firstName = "Jane"
     @State static var lastName = "Smith"
     @State static var email = "jane.smith@world.com"
+    @State static var isLoggedIn = false
+
     
     static var previews: some View {
-        RegistrationFormView(firstName: $firstName, lastName: $lastName, email: $email)
+        RegistrationFormView(firstName: $firstName, lastName: $lastName, email: $email, isLoggedIn: $isLoggedIn)
     }
 }
