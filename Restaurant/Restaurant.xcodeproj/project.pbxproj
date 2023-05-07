@@ -22,7 +22,7 @@
 		880CB0A42A06986E00CE4DB5 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0A32A06986E00CE4DB5 /* PersonalInformationView.swift */; };
 		880CB0A82A06ECB700CE4DB5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0A72A06ECB700CE4DB5 /* UserSettings.swift */; };
 		880CB0AB2A06FA6900CE4DB5 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0AA2A06FA6900CE4DB5 /* Utility.swift */; };
-		880CB0AD2A071A6F00CE4DB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0AC2A071A6F00CE4DB5 /* HomeViewModel.swift */; };
+		880CB0AF2A071FAF00CE4DB5 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880CB0AE2A071FAF00CE4DB5 /* MenuViewModel.swift */; };
 		88CC472C2A02D1B300849D05 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472B2A02D1B300849D05 /* OnboardingView.swift */; };
 		88CC47302A03985400849D05 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC472F2A03985400849D05 /* HomeView.swift */; };
 		88CC47322A03988B00849D05 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC47312A03988B00849D05 /* MenuView.swift */; };
@@ -54,7 +54,7 @@
 		880CB0A32A06986E00CE4DB5 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
 		880CB0A72A06ECB700CE4DB5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		880CB0AA2A06FA6900CE4DB5 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		880CB0AC2A071A6F00CE4DB5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		880CB0AE2A071FAF00CE4DB5 /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		88CC472B2A02D1B300849D05 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		88CC472F2A03985400849D05 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		88CC47312A03988B00849D05 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 				88CC47312A03988B00849D05 /* MenuView.swift */,
 				880CB0922A058FD800CE4DB5 /* MenuItemView.swift */,
 				880CB0942A062EFF00CE4DB5 /* CategoryView.swift */,
+				880CB0AE2A071FAF00CE4DB5 /* MenuViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -296,7 +297,7 @@
 				880CB0AB2A06FA6900CE4DB5 /* Utility.swift in Sources */,
 				88CC47342A03A2FD00849D05 /* ProfileView.swift in Sources */,
 				88CC473C2A03BD1800849D05 /* MenuItem.swift in Sources */,
-				880CB0AD2A071A6F00CE4DB5 /* HomeViewModel.swift in Sources */,
+				880CB0AF2A071FAF00CE4DB5 /* MenuViewModel.swift in Sources */,
 				88CC47322A03988B00849D05 /* MenuView.swift in Sources */,
 				880CB08F2A053C1B00CE4DB5 /* RegistrationFormView.swift in Sources */,
 				88FC8C0C2A0251E500841CA0 /* RestaurantApp.swift in Sources */,

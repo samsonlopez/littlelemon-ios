@@ -19,8 +19,8 @@ struct MenuView: View {
     @State var isError = false
     @State var errorMessage: String = ""
     
-    let networkURLString = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
-    
+    @StateObject private var menuViewModel: MenuViewModel = MenuViewModel()
+        
     var body: some View {
         VStack {
             MenuNavigationBar(onProfileSelected: {
@@ -49,30 +49,17 @@ struct MenuView: View {
             }
         }
         .task {
-            await getMenuData()
+            do {
+                try await menuViewModel.getMenuData(context: viewContext)
+            } catch {
+                errorMessage = "Unable to fetch data"
+                isError = true
+            }
         }
-        .alert(errorMessage, isPresented: $isError) {
+        .alert(isPresented: $isError) {
+            Alert(title: Text(errorMessage))
         }
         .navigationBarBackButtonHidden(true)
-        .background(
-
-        )
-    }
-    
-    @MainActor
-    func getMenuData() async {
-        let url = URL(string: networkURLString)!
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let fullMenu = try JSONDecoder().decode(MenuList.self, from: data)
-            Dish.createDishesFrom(menuItems: fullMenu.menu, viewContext)
-            try? viewContext.save()
-            
-        } catch {
-            print(error)
-            errorMessage = "Unable to fetch data"
-            isError = true
-        }
     }
     
     func buildSortDescriptors() -> [NSSortDescriptor] {
