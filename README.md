@@ -1,5 +1,6 @@
 # Little Lemon - Restaurant App (iOS)
-Capstone project for Meta iOS Developer Professional Certificate
+Capstone project for Meta iOS Developer Professional Certificate.
+Figma, **UI/UX Design**, **Swift**, **SwiftUI**, CoreData, Async-Await, GitFlow/PRs - Incremental Approach.
 
 **Screen FLow:**
 Registration Screen -> Home Screen -> Profile Screen
